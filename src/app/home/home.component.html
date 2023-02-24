@@ -1,0 +1,42 @@
+<mat-card class="card">
+
+    <mat-card-header class="mat-card-header">
+
+        <mat-card-title>Student Registration</mat-card-title>
+
+    </mat-card-header>
+
+    <form class="Registration-form" #registrationForm="ngForm">
+
+        <div class="row">
+            <div class="col-2">
+                <mat-label class="name">Student Name</mat-label>
+
+                <!-- <mat-form-field class="name-input" appearance="fill"> -->
+                <input class="name-input" name="name" [(ngModel)]="name">
+                <!-- </mat-form-field> -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <mat-label class="address">Address</mat-label>
+                <input class="address-input" name="address" [(ngModel)]="address">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <mat-label class="telephone">Telephone No</mat-label>
+                <input class="telephone-input" matInput placeholder="(xxx) xxx-xxxx" value="" mask="(000) 000-0000"
+                    name="phone" [(ngModel)]="phone" />
+            </div>
+        </div>
+
+    </form>
+    <div class="row">
+        <button mat-button class="btn-save" type="button" id="save" [disabled]="!phone || !address || !name"
+            (click)="saveDetails(registrationForm.value)">Save</button>
+    </div>
+
+</mat-card>
